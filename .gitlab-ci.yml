@@ -1,1 +1,6 @@
+image: maven:latest
 
+test:
+    runs-on: ubuntu-latest
+    script:
+        mvn -b clean test
