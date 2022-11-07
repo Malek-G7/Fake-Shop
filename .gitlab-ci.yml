@@ -1,6 +1,5 @@
-image: 3.8.6-openjdk-18
+image: maven:3.8.6-openjdk-18
 
 test:
-    runs-on: ubuntu-latest
     script:
-        mvn -b clean test
+        - mvn -b clean test
