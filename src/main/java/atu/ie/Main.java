@@ -1,7 +1,13 @@
 package atu.ie;
 
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    private int x ;
+
+    public Main(int x) {
+        this.x = x;
+    }
+
+    public int getX() {
+        return x;
     }
 }
