@@ -4,8 +4,8 @@ stages:
   - build
   - test
 
-compile-code-job:
-  stage: compile
+build-code-job:
+  stage: build
   script:
     - mvn compile
 
