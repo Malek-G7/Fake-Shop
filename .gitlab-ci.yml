@@ -4,10 +4,10 @@ stages:
   - build
   - test
 
-build-code-job:
-  stage: build
+compile-code-job:
+  stage: compile
   script:
-    - mvn build
+    - mvn compile
 
 test-code-job1:
   stage: test
