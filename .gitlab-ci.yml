@@ -1,5 +1,15 @@
 image: maven:3.8.6-openjdk-18
 
-test:
-    script:
-        - mvn -b clean test
+stages:
+  - build
+  - test
+
+build-code-job:
+  stage: build
+  script:
+    - mvn build
+
+test-code-job1:
+  stage: test
+  script:
+    - mvn -b clean test
