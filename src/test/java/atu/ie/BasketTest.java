@@ -46,6 +46,7 @@ class BasketTest {
         assertEquals(150,basketItem2.getItemPrice());
     }
 
+
     @Test
     void testDrugsQuantity(){
         Exception drugMsg = assertThrows(IllegalArgumentException.class, () ->{new Basket("drug",100,3).getItemName();});

@@ -10,8 +10,6 @@ public class Basket {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.quantity = quantity;
-
-
     }
 
 
@@ -32,9 +30,10 @@ public class Basket {
     }
 
     public int getQuantity(){
-
         return quantity;
     }
+
+
 
 
 
