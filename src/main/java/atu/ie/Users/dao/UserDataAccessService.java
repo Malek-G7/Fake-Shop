@@ -1,6 +1,6 @@
-package Users.dao;
+package atu.ie.Users.dao;
 
-import Users.User;
+import atu.ie.Users.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

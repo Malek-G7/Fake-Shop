@@ -1,7 +1,7 @@
-package Users.Service;
+package atu.ie.Users.Service;
 
-import Users.User;
-import Users.dao.UserDAO;
+import atu.ie.Users.User;
+import atu.ie.Users.dao.UserDAO;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 

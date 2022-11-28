@@ -1,4 +1,4 @@
-package Users;
+package atu.ie.Users;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
