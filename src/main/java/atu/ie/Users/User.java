@@ -1,4 +1,4 @@
-package Users;
+package atu.ie.Users;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

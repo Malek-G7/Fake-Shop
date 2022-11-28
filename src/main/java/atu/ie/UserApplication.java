@@ -1,4 +1,4 @@
-package Users;
+package atu.ie;
 
 
 import org.springframework.boot.SpringApplication;

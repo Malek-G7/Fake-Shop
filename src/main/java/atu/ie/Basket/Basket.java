@@ -1,4 +1,4 @@
-package atu.ie;
+package atu.ie.Basket;
 
 public class Basket {
     private String itemName;

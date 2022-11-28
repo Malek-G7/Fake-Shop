@@ -1,4 +1,4 @@
-package atu.ie;
+package atu.ie.Basket;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@SpringBootApplication
+
 @RestController
 @RequestMapping(path="api/basket")
 public class BasketApplication {
@@ -35,7 +35,5 @@ public class BasketApplication {
 		{
 			return (Basket) newService.getBasket(itemPrice);
 		}
-
-
 
 }

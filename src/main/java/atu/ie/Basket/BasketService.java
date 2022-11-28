@@ -1,7 +1,7 @@
-package atu.ie;
+package atu.ie.Basket;
 
+import atu.ie.Basket.Basket;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;

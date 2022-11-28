@@ -1,8 +1,7 @@
-package Users.api;
+package atu.ie.Users.api;
 
-import Users.User;
-import Users.Service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import atu.ie.Users.User;
+import atu.ie.Users.Service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
