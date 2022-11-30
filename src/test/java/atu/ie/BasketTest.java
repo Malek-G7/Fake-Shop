@@ -29,11 +29,12 @@ class BasketTest {
         myBasket.add(basketItem3);
         myBasket.add(basketItem4);
 
+        myBasket.remove(basketItem1);
     }
 
     @Test
     void testBasketSize(){
-        assertEquals(4,myBasket.size());
+        assertEquals(3,myBasket.size());
     }
 
     @Test
