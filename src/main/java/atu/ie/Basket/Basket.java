@@ -11,8 +11,6 @@ public class Basket {
         this.itemPrice = itemPrice;
         this.quantity = quantity;
     }
-
-
     public String getItemName(){
         if(itemName == "drug"){
             if(quantity>2){
