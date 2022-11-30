@@ -1,4 +1,4 @@
 FROM openjdk:17
-COPY target/classes/ /tmp
+COPY target/ /tmp
 WORKDIR /tmp
-CMD java atu.ie.UserApplication
+CMD java -jar FakeShop-1.0-SNAPSHOT.jar
