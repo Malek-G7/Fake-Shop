@@ -3,8 +3,8 @@ package atu.ie.Users.dao;
 import atu.ie.Users.User;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Stream;
 
 @Repository("ArrayList")
 public class UserDataAccessService implements UserDAO {
@@ -18,4 +18,16 @@ public class UserDataAccessService implements UserDAO {
     public List<User> getAllUsersFromDB() {
         return database;
     }
+
+    @Override
+    public void deleteUserByID(UUID uuid) {
+        Optional<User> user = getUserByID(uuid) ;
+        database.remove(user.get());
+    }
+
+    @Override
+    public Optional<User> getUserByID(UUID uuid){
+        return database.stream().filter(user -> user.getId().equals(uuid)).findFirst();
+    }
+
 }
