@@ -22,9 +22,9 @@ docker-build:
     image: docker:latest
     stage: build
     services:
-      -docker:dind
+      - docker:dind
     before_script:
-      -docker login -u "$CI_REGISTRYUSER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+      - docker login -u "$CI_REGISTRYUSER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     script:
       - docker build --pull -t "$CI_REGISTRY_IMAGE"
       - docker push "CI_REGISTRY_IMAGE"
