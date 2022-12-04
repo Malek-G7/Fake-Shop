@@ -13,7 +13,7 @@ import java.util.UUID;
 public class UserService {
     private UserDAO userDAO;
 
-    public UserService(@Qualifier("ArrayList") UserDAO userDAO) {
+    public UserService(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 
@@ -21,7 +21,7 @@ public class UserService {
         userDAO.insertUserToDB(user);
     }
     public List<User> getAllUsers(){
-        return userDAO.getAllUsersFromDB();
+        return userDAO.findAll();
     }
     public Optional<User> getUserByID(UUID uuid){
         return userDAO.getUserByID(uuid);
