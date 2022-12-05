@@ -1,4 +1,4 @@
-package Oisin;
+package atu.ie.Oisin;
 
 import java.util.Scanner;
 
