@@ -19,6 +19,8 @@ public class Payment {
         long num = input.nextLong();
         System.out.println("Card Number: " + num);
         input.close();
+
+        return cardNum;
     }
 
     public long getExpiryDate() {
