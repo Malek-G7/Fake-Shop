@@ -1,5 +1,5 @@
 variables:
-    IMAGE_NAME: malek7/my-docker
+    IMAGE_NAME: malek7/my-docker-repo
     IMAGE_TAG: fake-shop-1.0
     
 stages:
