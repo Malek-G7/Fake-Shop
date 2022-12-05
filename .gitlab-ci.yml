@@ -13,17 +13,17 @@ cache:
   paths:
     - .m2/repository
 
-# compile-job:
-#   image: maven:3.8.6-openjdk-18
-#   stage: compile
-#   script:
-#     - mvn compile
+compile-job:
+  image: maven:3.8.6-openjdk-18
+  stage: compile
+  script:
+    - mvn compile
 
-# test-job:
-#   image: maven:3.8.6-openjdk-18
-#   stage: test
-#   script:
-#     - mvn test
+test-job:
+  image: maven:3.8.6-openjdk-18
+  stage: test
+  script:
+    - mvn test
 
 package-job: 
   image: maven:3.8.6-openjdk-18
