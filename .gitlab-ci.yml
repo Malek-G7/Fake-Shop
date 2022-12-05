@@ -14,7 +14,7 @@ cache:
 
 compile:
   image: maven:3.8.6-openjdk-18
-  stage: build
+  stage: compile
   script:
     - mvn compile
 
@@ -24,7 +24,7 @@ test:
   script:
     - mvn test
 
-build-image:
+build-image :
   image: docker:20.10.21
   services:
     - docker:20.10.21-dind
