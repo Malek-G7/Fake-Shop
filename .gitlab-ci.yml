@@ -30,9 +30,9 @@ build-image :
     - docker:20.10.21-dind
   variables:
     DOCKER_TLS_CERTDIR: "/certs"
-
+  stage: build-image
   before_script:
-    - docker login -u $DOCKER_USER -p DOCKER_PASSWORD
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
   script:
     - docker build -t $IMAGE_NAME:$IMAGE_TAG .
     - docker push $IMAGE_NAME:$IMAGE_TAG
