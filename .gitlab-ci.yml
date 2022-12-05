@@ -47,4 +47,6 @@ build-image :
     - docker push $IMAGE_NAME:$IMAGE_TAG
   dependencies:
     - package-job
+  only: 
+    - main 
 
