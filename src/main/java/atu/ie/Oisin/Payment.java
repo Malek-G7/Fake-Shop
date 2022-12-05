@@ -27,6 +27,8 @@ public class Payment {
         long num = input.nextLong();
         System.out.println("Expiry Date: " + num);
         input.close();
+
+        return expiryDate;
     }
 
     public long getCVV() {
@@ -35,6 +37,8 @@ public class Payment {
         long num = input.nextLong();
         System.out.println("CVV value: " + num);
         input.close();
+
+        return CVV;
     }
 
 }
