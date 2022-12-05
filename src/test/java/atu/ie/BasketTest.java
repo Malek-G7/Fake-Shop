@@ -47,6 +47,11 @@ class BasketTest {
         assertEquals(150,basketItem2.getItemPrice());
     }
 
+    @Test
+    void testQuantity(){
+        assertEquals(2,basketItem1.getQuantity()-1);
+    }
+
 
     @Test
     void testDrugsQuantity(){
