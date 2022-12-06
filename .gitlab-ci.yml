@@ -11,7 +11,7 @@ cache:
 build-code-job:
   stage: build
   script:
-    - mvn compile
+    - mvn failghfsduifhauifhauiodfhaduifhuidasfhuia
 
 test-code-job1:
   stage: test
