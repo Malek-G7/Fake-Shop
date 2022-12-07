@@ -17,7 +17,7 @@ public class PaymentTest {
 
     @BeforeEach()
     void setUp() {
-        CardDetails = new Payment("1234 4321 1224 4321","1126","123");
+        CardDetails = new Payment("1234 4321 1234 4321","1126","123");
 
         myPayment.add(CardDetails);
 
