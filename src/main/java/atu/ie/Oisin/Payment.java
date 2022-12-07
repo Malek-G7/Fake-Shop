@@ -1,45 +1,46 @@
 package atu.ie.Oisin;
 
-import java.util.Scanner;
-
 public class Payment {
-    private long cardNum;
-    private Long expiryDate;
-    private Long CVV;
+    private String cardNum;
+    private String expiryDate;
+    private String CVV;
 
-    public Payment(Long cardNum, Long expiryDate, Long CVV) {
+    public Payment(String cardNum, String expiryDate, String CVV) {
         this.cardNum = cardNum;
         this.expiryDate = expiryDate;
         this.CVV = CVV;
     }
 
-    public long getCardNum() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter your Card Number");
-        long num = input.nextLong();
-        System.out.println("Card Number: " + num);
-        input.close();
+    public String getCardNum() {
 
+        if(cardNum.length()==20) { // 16 numbers and a space between each
+            System.out.println("card number entered");
+        }
+        else{
+            System.out.println("incorrect number entered");
+        }
         return cardNum;
     }
 
-    public long getExpiryDate() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter your Expiry date");
-        long num = input.nextLong();
-        System.out.println("Expiry Date: " + num);
-        input.close();
+    public String getExpiryDate() {
+        if(expiryDate.length()==4){
+            System.out.println("expiry date entered");
+        }
+        else{
+            System.out.println("incorrect date entered");
+        }
+
 
         return expiryDate;
     }
 
-    public long getCVV() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter your CVV Number");
-        long num = input.nextLong();
-        System.out.println("CVV value: " + num);
-        input.close();
-
+    public String getCVV() {
+        if(CVV.length()==3){
+            System.out.println("CVV entered");
+        }
+        else{
+            System.out.println("invalid CVV");
+        }
         return CVV;
     }
 
