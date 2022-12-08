@@ -2,31 +2,39 @@ package atu.ie.Users.Service;
 
 import atu.ie.Users.User;
 import atu.ie.Users.dao.UserDAO;
-import org.springframework.beans.factory.annotation.Qualifier;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
+@AllArgsConstructor
 @Service
 public class UserService {
-    private UserDAO userDAO;
+    private final UserDAO userDAO;
 
-    public UserService(@Qualifier("ArrayList") UserDAO userDAO) {
-        this.userDAO = userDAO;
-    }
-
-    public void addUser(User user){
-        userDAO.insertUserToDB(user);
-    }
     public List<User> getAllUsers(){
-        return userDAO.getAllUsersFromDB();
+        return userDAO.findAll();
     }
-    public Optional<User> getUserByID(UUID uuid){
-        return userDAO.getUserByID(uuid);
+    public void addUser(User user){
+        userDAO.save(user);
     }
-    public void deleteUserByID(UUID uuid){
-       userDAO.deleteUserByID(uuid);
+    public User getUserByID(long count) {
+        return userDAO.findUserByCount(count);
     }
+
+    public void deleteUserByID(long count){
+        userDAO.deleteUserByCount(count);
+    }
+
+//    public void addUser(User user){
+//        userDAO.insertUserToDB(user);
+//    }
+//
+//    public Optional<User> getUserByID(UUID uuid){
+//        return userDAO.getUserByID(uuid);
+//    }
+//    public void deleteUserByID(UUID uuid){
+//       userDAO.deleteUserByID(uuid);
+//    }
 }
