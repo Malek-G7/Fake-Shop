@@ -14,14 +14,14 @@ public class BasketController {
 	}
 
 	@GetMapping
-	public List<Basket> getBasket(){
+	public List<Item> getBasket(){
 		return newService.getBasket();
 	}
 
 	@GetMapping ("/{itemPrice}")
-	public Basket getBasket(@PathVariable int itemPrice)
+	public Item getBasket(@PathVariable int itemPrice)
 	{
-		return (Basket) newService.getBasket(itemPrice);
+		return (Item) newService.getBasket(itemPrice);
 	}
 
 }

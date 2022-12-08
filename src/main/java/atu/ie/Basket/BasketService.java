@@ -1,6 +1,5 @@
 package atu.ie.Basket;
 
-import atu.ie.Basket.Basket;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -9,19 +8,18 @@ import java.util.List;
 @Service
 public class BasketService {
 
-    public List<Basket> getBasket(){
-        List<Basket> myBasket = List.of(
-                new Basket("Hat",200,1),
-                new Basket("Pants",100,2),
-                new Basket("Phone",12,1));
-        return myBasket;
+    public List<Item> getBasket(){
+        List<Item> myItem = List.of(
+                new Item("Hat",200,1),
+                new Item("Pants",100,2),
+                new Item("Phone",12,1));
+        return myItem;
     }
 
-    public Basket getBasket(@PathVariable int itemPrice)
+    public Item getBasket(@PathVariable int itemPrice)
     {
-        Basket myBasket = new Basket("Pants",100,2);
-        return myBasket;
-
+        Item myItem = new Item("Pants",100,2);
+        return myItem;
     }
 
 }
