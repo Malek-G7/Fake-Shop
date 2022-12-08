@@ -1,23 +1,9 @@
 package atu.ie.Basket;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-import javax.persistence.*;
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table
 public class Basket {
     private String itemName;
     private float itemPrice;
     private int quantity;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long count;
-
-
 
 
     public Basket(String itemName, float itemPrice, int quantity) {
