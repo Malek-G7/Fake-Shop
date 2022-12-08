@@ -1,6 +1,7 @@
 package atu.ie;
 
 import atu.ie.Basket.Basket;
+import atu.ie.Basket.Item;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,51 +12,60 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BasketTest {
 
-    Basket basketItem1;
-    Basket basketItem2;
-    Basket basketItem3;
-    Basket basketItem4;
+    Item itemItem1;
+    Item itemItem2;
+    Item itemItem3;
+    Item itemItem4;
+    int totalSize;
+    float totalPrice;
 
-    ArrayList<Basket> myBasket = new ArrayList<Basket>();
+    ArrayList<Item> myItem = new ArrayList<Item>();
     @BeforeEach
     void setUp() {
-        basketItem1 = new Basket("Drug",200,3);
-        basketItem2 = new Basket("charger",150,2);
-        basketItem3 = new Basket("laptop",50,6);
-        basketItem4 = new Basket("phone",10,8);
+        itemItem1 = new Item("Drug",200,3);
+        itemItem2 = new Item("charger",150,2);
+        itemItem3 = new Item("laptop",50,6);
+        itemItem4 = new Item("phone",10,8);
 
-        myBasket.add(basketItem1);
-        myBasket.add(basketItem2);
-        myBasket.add(basketItem3);
-        myBasket.add(basketItem4);
+        myItem.add(itemItem1);
+        myItem.add(itemItem2);
+        myItem.add(itemItem3);
+        myItem.add(itemItem4);
+        myItem.remove(itemItem1);
 
-        myBasket.remove(basketItem1);
+        Basket basket = new Basket(myItem = new ArrayList<Item>());
+        basket.addToBasket(itemItem1);
+        basket.addToBasket(itemItem2);
+        basket.removeFromBasket(itemItem2);
+        totalSize = basket.getBasketSize();
+        totalPrice = basket.getTotalPrice();
     }
 
     @Test
     void testBasketSize(){
-        assertEquals(3,myBasket.size());
+        assertEquals(1,totalSize);
+
     }
 
     @Test
     void testItemName(){
-        assertEquals("Drug", basketItem1.getItemName());
+        assertEquals("Drug", itemItem1.getItemName());
     }
 
     @Test
     void testItemPrice(){
-        assertEquals(150,basketItem2.getItemPrice());
+        assertEquals(600, totalPrice);
     }
 
     @Test
     void testQuantity(){
-        assertEquals(2,basketItem1.getQuantity()-1);
+        assertEquals(2, itemItem1.getQuantity()-1);
     }
 
 
     @Test
     void testDrugsQuantity(){
-        Exception drugMsg = assertThrows(IllegalArgumentException.class, () ->{new Basket("drug",100,3).getItemName();});
+        Exception drugMsg = assertThrows(IllegalArgumentException.class, () ->{new Item("drug",100,3).getItemName();});
         assertEquals("Sorry but you can only buy 2 drugs at a time",drugMsg.getMessage());
     }
 
