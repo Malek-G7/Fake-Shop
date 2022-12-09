@@ -1,6 +1,6 @@
 package atu.ie;
 
-import atu.ie.Basket.Basket;
+import atu.ie.basket.Basket;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
