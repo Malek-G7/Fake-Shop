@@ -1,18 +1,17 @@
 package atu.ie.Item;
 
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.BufferedWriter;
 import java.util.stream.Collectors;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 
 @RestController
 @RequestMapping(path = "apt/item")
@@ -30,8 +29,5 @@ public class ItemWeb {
 
         return(itemList);
     }
-
-
-
 }
 
