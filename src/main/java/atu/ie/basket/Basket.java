@@ -1,35 +1,37 @@
-package atu.ie.basket;
+package atu.ie.Basket;
+import atu.ie.Basket.Item;
 
-public class  Basket {
-    private String itemName;
-    private float itemPrice;
-    private int quantity;
+import java.util.ArrayList;
+import java.util.ListIterator;
 
+public class Basket {
+    ArrayList<Item> myItem;
 
-    public Basket(String itemName, float itemPrice, int quantity) {
-        this.itemName = itemName;
-        this.itemPrice = itemPrice;
-        this.quantity = quantity;
+    public Basket(ArrayList<Item> myItem) {
+        this.myItem = myItem;
     }
-    public String getItemName(){
-        if(itemName == "drug"){
-            if(quantity>2){
-                throw new IllegalArgumentException("Sorry but you can only buy 2 drugs at a time");
-            }
+
+    public void addToBasket(Item item){
+        this.myItem.add(item);
+    }
+
+    public int getBasketSize(){
+        return this.myItem.size();
+    }
+
+    public void removeFromBasket(Item item){
+        this.myItem.remove(item);
+    }
+
+    public float getTotalPrice(){
+        Item item;
+        ListIterator<Item> iterator = myItem.listIterator();
+        float total=0;
+        while(iterator.hasNext()){
+            item = iterator.next();
+            total = total + (item.getItemPrice() * item.getQuantity());
         }
-        return itemName;
+        return total;
     }
-
-    public float getItemPrice(){
-        if(itemPrice>100) {
-            System.out.println("You are too poor for this product");
-        }
-        return itemPrice;
-    }
-
-    public int getQuantity(){
-        return quantity;
-    }
-
 
 }
