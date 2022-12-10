@@ -20,6 +20,9 @@ public class UserService {
     public void addUser(User user){
         userDAO.insertUserToDB(user);
     }
+    public void addItemToUserByID(UUID uuid){
+        userDAO.addItemToUserByID(uuid);
+    }
     public List<User> getAllUsers(){
         return userDAO.getAllUsersFromDB();
     }
