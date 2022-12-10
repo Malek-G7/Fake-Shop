@@ -10,7 +10,8 @@ import java.util.UUID;
 
 @RequestMapping("api/user")
 @RestController
-public class UserController {
+public class
+UserController {
     private UserService userService;
     public UserController(UserService userService) {
         this.userService = userService;
@@ -23,6 +24,11 @@ public class UserController {
     @GetMapping
     public List<User> getAllUsers(){
        return userService.getAllUsers();
+    }
+
+    @PostMapping(path = "{id}")
+    public void addItem(@PathVariable("id") UUID uuid){
+        userService.addItemToUserByID(uuid);
     }
 
     @GetMapping(path = "{id}")

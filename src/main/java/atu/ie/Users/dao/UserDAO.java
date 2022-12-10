@@ -12,6 +12,6 @@ public interface UserDAO {
     List<User> getAllUsersFromDB();
     void deleteUserByID(UUID uuid);
     Optional<User> getUserByID(UUID uuid);
-
+    public void addItemToUserByID(UUID uuid);
 
     }
