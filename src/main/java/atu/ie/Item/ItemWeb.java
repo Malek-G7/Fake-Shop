@@ -28,4 +28,22 @@ public class ItemWeb {
 
         return String.valueOf((item));
     }
+
+//    @GetMapping
+//    public String newCSVFile(){
+//        String itemList = "item.csv";
+//
+//        try(PrintWriter il = new PrintWriter(itemList)){
+//            il.write("Item1");
+//            il.write("Item2");
+//            il.write("Item3");
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("Error creating csv file");
+//            e.printStackTrace();
+//        }
+//
+//
+//        return (itemList);
+//    }
 }
