@@ -18,9 +18,7 @@ public class ItemWeb {
         ArrayList<Item> item = new ArrayList<>();
 
         try(PrintWriter il = new PrintWriter(itemList)){
-            for(Item item1: item){
-                il.write(String.valueOf(item1));
-            }
+            il.write(String.valueOf(item));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
