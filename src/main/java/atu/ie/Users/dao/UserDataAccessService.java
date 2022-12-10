@@ -1,6 +1,5 @@
 package atu.ie.Users.dao;
 
-import atu.ie.Basket.Item;
 import atu.ie.Basket.Basket;
 import atu.ie.Users.User;
 import org.springframework.stereotype.Repository;

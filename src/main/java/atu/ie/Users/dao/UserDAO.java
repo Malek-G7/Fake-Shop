@@ -14,4 +14,6 @@ public interface UserDAO {
     Optional<User> getUserByID(UUID uuid);
     public void addItemToUserByID(UUID uuid);
 
-    }
+}
+
+

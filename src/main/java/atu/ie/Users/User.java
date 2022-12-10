@@ -1,7 +1,7 @@
 package atu.ie.Users;
 
 import atu.ie.Basket.Basket;
-import atu.ie.Basket.Item;
+import atu.ie.Basket.Items;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -22,12 +22,12 @@ public class User {
         setName(name);
         setEmail(email);
         setPassword(password);
-        ArrayList <Item> list = new ArrayList<Item>();
+        ArrayList <Items> list = new ArrayList<Items>();
         this.basket = new Basket(list);
     }
 
     public void addToBasket(){
-        Item item = new Item("item",2,1);
+        Items item = new Items("item",2,1);
         basket.addToBasket(item);
     }
     public void setName(String name) {

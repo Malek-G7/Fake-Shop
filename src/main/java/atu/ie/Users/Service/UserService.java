@@ -32,4 +32,5 @@ public class UserService {
     public void deleteUserByID(UUID uuid){
        userDAO.deleteUserByID(uuid);
     }
+
 }
