@@ -5,15 +5,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(path = "/api/additem", method = RequestMethod.POST)
+@RequestMapping(path = "/api/item", method = RequestMethod.POST)
 public class ItemWeb {
 
-    @PostMapping
-    public String addItem(){
+    @PostMapping("/additem")
+    public String addItem(@RequestBody Item items){
         String itemList = "item.csv";
 
         ArrayList<Item> item = new ArrayList<>();
