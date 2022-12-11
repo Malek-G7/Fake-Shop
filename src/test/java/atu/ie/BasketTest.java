@@ -1,32 +1,31 @@
 package atu.ie;
 
 import atu.ie.Basket.Basket;
-import atu.ie.Item.Item;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import atu.ie.Basket.Items;
+import atu.ie.Item.Item;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BasketTest {
-    Items itemItem1;
-    Items itemItem2;
-    Items itemItem3;
-    Items itemItem4;
+    Item itemItem1;
+    Item itemItem2;
+    Item itemItem3;
+    Item itemItem4;
     int totalSize;
     double totalPrice;
 
   //  ArrayList<Items> myItems = new ArrayList<Items>();
-    ArrayList<Items> myItem = new ArrayList<Items>();
+    ArrayList<Item> myItem = new ArrayList<Item>();
     @BeforeEach
     void setUp() {
-        itemItem1 = new Items("Pen",10,3);
-        itemItem2 = new Items("Pad",10,2);
-        itemItem3 = new Items("Book",20,6);
-        itemItem4 = new Items("Page",15,8);
+        itemItem1 = new Item("Pen",10,3);
+        itemItem2 = new Item("Pad",10,2);
+        itemItem3 = new Item("Book",20,6);
+        itemItem4 = new Item("Page",15,8);
 
 
 

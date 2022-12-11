@@ -1,6 +1,7 @@
 package atu.ie.Users.dao;
 
-import atu.ie.Basket.Items;
+
+import atu.ie.Item.Item;
 import atu.ie.Payment.Payment;
 import atu.ie.Users.User;
 
@@ -14,7 +15,7 @@ public interface UserDAO {
     List<User> getAllUsersFromDB();
     void deleteUserByID(UUID uuid);
     Optional<User> getUserByID(UUID uuid);
-    public void addItemToUserBasketByID(UUID uuid , Items item);
+    public void addItemToUserBasketByID(UUID uuid , Item item);
     public void updatePaymentDetailsOfUserByID(UUID uuid, Payment payment);
 
 }

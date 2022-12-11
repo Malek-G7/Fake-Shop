@@ -1,34 +1,42 @@
 package atu.ie.Item;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ItemTest {
 
-    @BeforeEach
-    void setUp() {
-    }
-
     @Test
-    public void itemTest(){
-        Item item = new Item(1, "iPhone", 999.99);
+    public void ItemTest(){
 
-        assertEquals(1, item.getId());
-        assertEquals("iPhone", item.getName());
+        Item item = new Item("Phone", 999.99, 10);
+
+        assertEquals("Phone", item.getName());
         assertEquals(999.99, item.getPrice());
+        assertEquals(10, item.getQuantity());
+
+
     }
 
     @Test
-    public void testToString(){
-        Item item = new Item(1, "iPhone", 999.99);
+    public void itemSetTest(){
 
-        assertEquals("Items List{Number = 1.0\' Name iPhone\' Price = 999.99\' }", item.toString());
-    }
+        Item item = new Item("Phone", 999.99, 10);
+        UUID uuid = UUID.randomUUID();
 
-    @AfterEach
-    void tearDown() {
+        item.setName("pen");
+        item.setPrice(1.0);
+        item.setQuantity(30);
+        item.setUuid(uuid);
+
+
+
+        assertEquals("pen", item.getName());
+        assertEquals(1.0, item.getPrice());
+        assertEquals(30, item.getQuantity());
+        assertEquals(uuid, item.getUuid());
+
     }
 }
