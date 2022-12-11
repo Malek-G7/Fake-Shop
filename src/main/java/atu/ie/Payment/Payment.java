@@ -14,38 +14,37 @@ public class Payment {
     }
 
     public String getCardNum() {
-
-        if(cardNumber.length()==20) { // 16 numbers and a space between each
-            System.out.println("card number entered");
-        }
-        else{
-            System.out.println("incorrect number entered");
-        }
         return cardNumber;
     }
 
     public String getExpiryDate() {
-        if(expiryDate.length()==4){
-            System.out.println("expiry date entered");
-        }
-        else{
-            System.out.println("incorrect date entered");
-        }
-
-
         return expiryDate;
     }
 
     public String getCVV() {
-        if(CVV.length()==3){
-            System.out.println("CVV entered");
-        }
-        else{
-            System.out.println("invalid CVV");
-        }
         return CVV;
     }
 
+    public void setCardNumber(String cardNumber) {
+        if(cardNumber.length()>15){
+            this.cardNumber = cardNumber;
+        }
+        else throw new IllegalArgumentException("invalid card number");
+    }
+
+    public void setExpiryDate(String expiryDate) {
+        if(expiryDate.length()>3){
+            this.expiryDate = expiryDate;
+        }
+        else throw new IllegalArgumentException("invalid date format");
+    }
+
+    public void setCVV(String CVV) {
+        if(CVV.length()>2){
+            this.CVV = CVV;
+        }
+        else throw new IllegalArgumentException("invalid CVV");
+    }
 }
 
 
