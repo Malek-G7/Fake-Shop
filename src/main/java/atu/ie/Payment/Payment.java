@@ -8,9 +8,9 @@ public class Payment {
     private String CVV;
 
     public Payment(@JsonProperty ("cardNumber") String cardNumber, @JsonProperty("expiryDate") String expiryDate,@JsonProperty("CVV") String CVV) {
-        this.cardNumber = cardNumber;
-        this.expiryDate = expiryDate;
-        this.CVV = CVV;
+        setCardNumber(cardNumber);
+        setExpiryDate(expiryDate);
+        setCVV(CVV);
     }
 
     public String getCardNum() {
