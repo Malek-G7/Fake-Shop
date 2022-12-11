@@ -1,25 +1,27 @@
 package atu.ie.Payment;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Payment {
-    private String cardNum;
+    private String cardNumber;
     private String expiryDate;
     private String CVV;
 
-    public Payment(String cardNum, String expiryDate, String CVV) {
-        this.cardNum = cardNum;
+    public Payment(@JsonProperty ("cardNumber") String cardNumber, @JsonProperty("expiryDate") String expiryDate,@JsonProperty("CVV") String CVV) {
+        this.cardNumber = cardNumber;
         this.expiryDate = expiryDate;
         this.CVV = CVV;
     }
 
     public String getCardNum() {
 
-        if(cardNum.length()==20) { // 16 numbers and a space between each
+        if(cardNumber.length()==20) { // 16 numbers and a space between each
             System.out.println("card number entered");
         }
         else{
             System.out.println("incorrect number entered");
         }
-        return cardNum;
+        return cardNumber;
     }
 
     public String getExpiryDate() {

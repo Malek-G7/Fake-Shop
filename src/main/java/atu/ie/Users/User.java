@@ -2,6 +2,7 @@ package atu.ie.Users;
 
 import atu.ie.Basket.Basket;
 import atu.ie.Basket.Items;
+import atu.ie.Payment.Payment;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -13,8 +14,9 @@ public class User {
     private String email ;
     private String password ;
     private UUID id ;
+    private Basket basket ;
+    private Payment payment ;
 
-    public Basket basket ;
 
 
 
@@ -22,14 +24,16 @@ public class User {
         setName(name);
         setEmail(email);
         setPassword(password);
+        this.id = UUID.randomUUID();
         ArrayList <Items> list = new ArrayList<Items>();
         this.basket = new Basket(list);
+        this.payment = new Payment("1234-1234-1234","12/24","000");
     }
 
-    public void addToBasket(){
-        Items item = new Items("item",2,1);
+    public void addToBasket(Items item){
         basket.addToBasket(item);
     }
+
     public void setName(String name) {
         if(name.length()>2){
             this.name = name;
@@ -72,4 +76,19 @@ public class User {
         return basket;
     }
 
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setBasket(Basket basket) {
+        this.basket = basket;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
 }

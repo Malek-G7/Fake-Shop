@@ -1,5 +1,7 @@
 package atu.ie.Users.api;
 
+import atu.ie.Basket.Items;
+import atu.ie.Payment.Payment;
 import atu.ie.Users.User;
 import atu.ie.Users.Service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -26,9 +28,13 @@ UserController {
        return userService.getAllUsers();
     }
 
-    @PostMapping(path = "{id}")
-    public void addItem(@PathVariable("id") UUID uuid){
-        userService.addItemToUserByID(uuid);
+    @PostMapping(path = "/items/{id}")
+    public void addItemToUserBasketByID(@PathVariable("id") UUID uuid, @RequestBody Items item){
+        userService.addItemToUserBasketByID(uuid,item);
+    }
+    @PostMapping(path = "/payment/{id}")
+    public void updatePaymentDetailsOfUserByID(@PathVariable("id") UUID uuid, @RequestBody Payment payment){
+        userService.updatePaymentDetailsOfUserByID(uuid,payment);
     }
 
     @GetMapping(path = "{id}")
