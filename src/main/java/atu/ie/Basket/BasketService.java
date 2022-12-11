@@ -1,34 +1,32 @@
 package atu.ie.Basket;
 
+import atu.ie.Item.Item;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
-import atu.ie.Item.Item;
 
 import java.util.ArrayList;
-import java.util.List;
-import atu.ie.Basket.Basket;
 
 @Service
 public class BasketService {
-    ArrayList<Items> myItem = new ArrayList<Items>();
+    ArrayList<Item> myItem = new ArrayList<Item>();
     Basket basket = new Basket(myItem);
 
 
-    public ArrayList<Items> getAllItems() {
+    public ArrayList<Item> getAllItems() {
         return myItem;
     }
 
-    public Items getItemByName(@PathVariable String name)
+    public Item getItemByName(@PathVariable String name)
     {
-        for (Items item : myItem) {
+        for (Item item : myItem) {
             if (item.getName().equals(name)) {
                 return item;
             }
         }
         return null;
     }
-    public ArrayList<Items> removeItemByName(@PathVariable String name){
-        for (Items item : myItem) {
+    public ArrayList<Item> removeItemByName(@PathVariable String name){
+        for (Item item : myItem) {
                 if (item.getName().equals(name)) {
                     basket.removeFromBasket(item);
                     return myItem;
@@ -37,7 +35,7 @@ public class BasketService {
         return null;
     }
 
-    public void addToBasket(Items item){
+    public void addToBasket(Item item){
         myItem.add(item);
     }
 

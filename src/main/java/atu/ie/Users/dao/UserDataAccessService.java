@@ -4,7 +4,7 @@ import atu.ie.Basket.Basket;
 import atu.ie.Item.Item;
 import atu.ie.Payment.Payment;
 import atu.ie.Users.User;
-import atu.ie.Basket.Items;
+import atu.ie.Item.Item;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -35,7 +35,7 @@ public class UserDataAccessService implements UserDAO {
         return database.stream().filter(user -> user.getId().equals(uuid)).findFirst();
     }
 
-    public void addItemToUserBasketByID(UUID uuid ,Items item){
+    public void addItemToUserBasketByID(UUID uuid ,Item item){
         User UserInstance = database.stream().filter(u -> u.getId().equals(uuid)).collect(Collectors.toList()).get(0);
         UserInstance.addToBasket(item);
 
