@@ -18,13 +18,8 @@ public class BasketController {
 		return newService.getBasketDetails();
 	}
 
-	@GetMapping("/items")
-	public ArrayList<Items> getAllItems(){
-		return newService.getAllItems();
-	}
-
 	@GetMapping("/items/find/{name}")
-	public Items getItemByName(@PathVariable String name){return (Items) newService.getItemByName(name);}
+	public Items getItemByName(@PathVariable String name){return newService.getItemByName(name);}
 
 	@PostMapping("")
 	public void saveItem(@RequestBody Items item){
@@ -32,6 +27,6 @@ public class BasketController {
 	}
 
 	@DeleteMapping("/items/remove/{name}")
-	public ArrayList<Items>  removeItemByName(@PathVariable String name){return newService.removeItemByName(name);}
+	public ArrayList<Items> removeItemByName(@PathVariable String name){return newService.removeItemByName(name);}
 
 }

@@ -14,10 +14,6 @@ public class BasketService {
     Basket basket = new Basket(myItem);
 
 
-    public ArrayList<Items> getAllItems() {
-        return myItem;
-    }
-
     public Items getItemByName(@PathVariable String name)
     {
         for (Items item : myItem) {
