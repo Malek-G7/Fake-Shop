@@ -27,7 +27,7 @@ public class User {
         this.id = UUID.randomUUID();
         ArrayList <Item> list = new ArrayList<Item>();
         this.basket = new Basket(list);
-        this.payment = new Payment("1234-1234-1234","12/24","000");
+        this.payment = new Payment("1234-1234-1234-1234","12/24","000");
     }
 
     public void addToBasket(Item item){
