@@ -2,16 +2,16 @@ package atu.ie.Basket;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
-import atu.ie.Basket.Items;
+import atu.ie.Item.Item;
 
 public class Basket {
-    ArrayList<Items> myItem;
+    ArrayList<Item> myItem;
 
-    public Basket(ArrayList<Items> myItem) {
+    public Basket(ArrayList<Item> myItem) {
         this.myItem = myItem;
     }
 
-    public void addToBasket(Items item){
+    public void addToBasket(Item item){
         this.myItem.add(item);
     }
 
@@ -19,17 +19,17 @@ public class Basket {
         return this.myItem.size();
     }
 
-    public ArrayList<Items> getItems(){
+    public ArrayList<Item> getItems(){
         return myItem ;
     }
 
-    public void removeFromBasket(Items item){
+    public void removeFromBasket(Item item){
         this.myItem.remove(item);
     }
 
     public double getTotalPrice(){
-        Items item;
-        ListIterator<Items> iterator = myItem.listIterator();
+        Item item;
+        ListIterator<Item> iterator = myItem.listIterator();
         double total=0;
         while(iterator.hasNext()){
             item = iterator.next();

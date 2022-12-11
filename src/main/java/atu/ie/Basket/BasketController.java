@@ -19,19 +19,19 @@ public class BasketController {
 	}
 
 	@GetMapping("/items")
-	public ArrayList<Items> getAllItems(){
+	public ArrayList<Item> getAllItems(){
 		return newService.getAllItems();
 	}
 
 	@GetMapping("/items/find/{name}")
-	public Items getItemByName(@PathVariable String name){return (Items) newService.getItemByName(name);}
+	public Item getItemByName(@PathVariable String name){return (Item) newService.getItemByName(name);}
 
 	@PostMapping("")
-	public void saveItem(@RequestBody Items item){
+	public void saveItem(@RequestBody Item item){
 		newService.addToBasket(item);
 	}
 
 	@DeleteMapping("/items/remove/{name}")
-	public ArrayList<Items>  removeItemByName(@PathVariable String name){return newService.removeItemByName(name);}
+	public ArrayList<Item>  removeItemByName(@PathVariable String name){return newService.removeItemByName(name);}
 
 }

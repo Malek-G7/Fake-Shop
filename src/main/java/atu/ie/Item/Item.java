@@ -1,42 +1,51 @@
 package atu.ie.Item;
 
-/*this will have to use a xml file to read a list of items
-most likely will be using a array list code so have to do research on that.
-have to look at the code from last year with michale to see how we used the xml file and how we read it.
+import com.fasterxml.jackson.annotation.JsonProperty;
 
- */
-
-import java.util.ArrayList;
+import java.util.UUID;
 
 public class Item {
-
-    private String name;                // row 1
-    private double Id, price;   // row 0, 3, 2
-
-    public Item(double Id, String name, double price){
+    private String name;
+    private int price;
+    private int quantity;
+    private UUID uuid ;
+    public Item(@JsonProperty("name") String name, @JsonProperty("price") int price, @JsonProperty("quantity") int quantity) {
         this.name = name;
         this.price = price;
-        this.Id = Id;
+        this.quantity = quantity;
+        this.uuid = UUID.randomUUID();
     }
+
 
     public String getName() {
         return name;
     }
-    public double getId() {
-        return Id;
-    }
-    public double getPrice() {
+
+    public int getPrice() {
         return price;
     }
 
+    public int getQuantity() {
+        return quantity;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    @Override
-    public String toString(){
-        return "Items List{" +
-                "Number = " + Id + "\' " +
-                "Name " + name + "\' " +
-                "Price = " + price + "\' " +
-                '}';
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public UUID getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(UUID uuid) {
+        this.uuid = uuid;
     }
 }

@@ -1,6 +1,7 @@
 package atu.ie.Users.api;
 
-import atu.ie.Basket.Items;
+
+import atu.ie.Item.Item;
 import atu.ie.Payment.Payment;
 import atu.ie.Users.User;
 import atu.ie.Users.Service.UserService;
@@ -29,7 +30,7 @@ UserController {
     }
 
     @PostMapping(path = "/items/{id}")
-    public void addItemToUserBasketByID(@PathVariable("id") UUID uuid, @RequestBody Items item){
+    public void addItemToUserBasketByID(@PathVariable("id") UUID uuid, @RequestBody Item item){
         userService.addItemToUserBasketByID(uuid,item);
     }
     @PostMapping(path = "/payment/{id}")

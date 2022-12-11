@@ -1,6 +1,7 @@
 package atu.ie.Users.Service;
 
-import atu.ie.Basket.Items;
+
+import atu.ie.Item.Item;
 import atu.ie.Payment.Payment;
 import atu.ie.Users.User;
 import atu.ie.Users.dao.UserDAO;
@@ -22,7 +23,7 @@ public class UserService {
     public void addUser(User user){
         userDAO.insertUserToDB(user);
     }
-    public void addItemToUserBasketByID(UUID uuid, Items item){
+    public void addItemToUserBasketByID(UUID uuid, Item item){
         userDAO.addItemToUserBasketByID(uuid,item);
     }
     public void updatePaymentDetailsOfUserByID(UUID uuid, Payment payment){

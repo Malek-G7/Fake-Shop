@@ -1,7 +1,7 @@
 package atu.ie.Users;
 
 import atu.ie.Basket.Basket;
-import atu.ie.Basket.Items;
+import atu.ie.Item.Item;
 import atu.ie.Payment.Payment;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -25,12 +25,12 @@ public class User {
         setEmail(email);
         setPassword(password);
         this.id = UUID.randomUUID();
-        ArrayList <Items> list = new ArrayList<Items>();
+        ArrayList <Item> list = new ArrayList<Item>();
         this.basket = new Basket(list);
         this.payment = new Payment("1234-1234-1234","12/24","000");
     }
 
-    public void addToBasket(Items item){
+    public void addToBasket(Item item){
         basket.addToBasket(item);
     }
 
