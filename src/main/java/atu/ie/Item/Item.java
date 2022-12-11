@@ -22,7 +22,7 @@ public class Item {
     public String getName() {
         return name;
     }
-    public double getNum() {
+    public double getId() {
         return Id;
     }
     public double getPrice() {
