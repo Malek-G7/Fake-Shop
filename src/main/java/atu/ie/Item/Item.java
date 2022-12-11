@@ -11,43 +11,31 @@ import java.util.ArrayList;
 public class Item {
 
     private String name;                // row 1
-    private double num, price, stock;   // row 0, 3, 2
+    private double Id, price;   // row 0, 3, 2
 
-    public Item(double num, String name, double stock, double price){
+    public Item(double Id, String name, double price){
         this.name = name;
         this.price = price;
-        this.stock = stock;
-        this.num = num;
+        this.Id = Id;
     }
 
     public String getName() {
         return name;
     }
     public double getNum() {
-        return num;
+        return Id;
     }
     public double getPrice() {
         return price;
     }
-    public double getStock() {
-        return stock;
-    }
 
-    public static Item fromValues(String [] row){
-        String name = row[1];
-        double num = Double.parseDouble(row[0]);
-        double price = Double.parseDouble(row[3]);
-        double stock = Double.parseDouble(row[2]);
 
-        return new Item(num, name, stock, price);
-    }
 
     @Override
     public String toString(){
         return "Items List{" +
-                "Number = " + num + "\' " +
+                "Number = " + Id + "\' " +
                 "Name " + name + "\' " +
-                "Stock = " + stock + "\' " +
                 "Price = " + price + "\' " +
                 '}';
     }
