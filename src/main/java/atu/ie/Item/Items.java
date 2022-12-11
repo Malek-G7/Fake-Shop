@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -17,8 +18,9 @@ public class Items {
     ArrayList<Item> items = new ArrayList<Item>(Arrays.asList(item1,item2,item3));
 
     @PostMapping("/additem")
-    public void addItem(@RequestBody Item item){
-        items.add(item);
+    public void addItem(@RequestBody Collection<Item> item){
+        items.addAll(item);
+
     }
 
 
