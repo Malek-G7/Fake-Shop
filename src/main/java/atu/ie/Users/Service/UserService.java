@@ -1,5 +1,7 @@
 package atu.ie.Users.Service;
 
+import atu.ie.Basket.Items;
+import atu.ie.Payment.Payment;
 import atu.ie.Users.User;
 import atu.ie.Users.dao.UserDAO;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,8 +22,11 @@ public class UserService {
     public void addUser(User user){
         userDAO.insertUserToDB(user);
     }
-    public void addItemToUserByID(UUID uuid){
-        userDAO.addItemToUserByID(uuid);
+    public void addItemToUserBasketByID(UUID uuid, Items item){
+        userDAO.addItemToUserBasketByID(uuid,item);
+    }
+    public void updatePaymentDetailsOfUserByID(UUID uuid, Payment payment){
+        userDAO.updatePaymentDetailsOfUserByID(uuid,payment);
     }
     public List<User> getAllUsers(){
         return userDAO.getAllUsersFromDB();

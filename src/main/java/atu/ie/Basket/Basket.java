@@ -19,6 +19,10 @@ public class Basket {
         return this.myItem.size();
     }
 
+    public ArrayList<Items> getItems(){
+        return myItem ;
+    }
+
     public void removeFromBasket(Items item){
         this.myItem.remove(item);
     }
