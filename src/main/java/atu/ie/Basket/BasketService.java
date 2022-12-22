@@ -25,6 +25,7 @@ public class BasketService {
         }
         return null;
     }
+
     public ArrayList<Item> removeItemByName(@PathVariable String name){
         for (Item item : myItem) {
                 if (item.getName().equals(name)) {

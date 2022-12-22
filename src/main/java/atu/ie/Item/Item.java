@@ -16,7 +16,6 @@ public class Item {
         this.uuid = UUID.randomUUID();
     }
 
-
     public String getName() {
         return name;
     }
