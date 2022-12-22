@@ -49,7 +49,7 @@ class BasketTest {
 
     @Test
     void testQuantity(){
-        assertEquals(2, basketItem2.getQuantity() -1);
+        assertEquals(1, basketItem2.getQuantity() -1);
     }
 
 
